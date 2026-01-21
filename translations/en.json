@@ -1,0 +1,98 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "DeltaLux",
+        "description": "Choose how you want to set up your light group.",
+        "data": {
+          "setup_mode": "Setup Method"
+        }
+      },
+      "gui": {
+        "title": "Create Light Group",
+        "description": "Create a light group where each light maintains a brightness offset from the master.",
+        "data": {
+          "name": "Group Name",
+          "entity_id": "Lights"
+        },
+        "data_description": {
+          "name": "A friendly name for this light group",
+          "entity_id": "Select two or more lights to include in this group"
+        }
+      },
+      "yaml": {
+        "title": "Import from YAML",
+        "description": "Paste your YAML configuration below.\n\n**Example format:**\n```yaml\nname: My Light Group\noffset_type: absolute\nlights:\n  - entity_id: light.living_room\n    offset: 0\n    min_brightness: 1\n    max_brightness: 100\n```\n\n{error_detail}",
+        "data": {
+          "yaml_config": "Configuration"
+        }
+      },
+      "offsets": {
+        "title": "Configure Brightness Settings",
+        "description": "For each light, set the brightness offset (negative = dimmer), minimum brightness floor, and maximum brightness ceiling.",
+        "data": {
+          "offset_type": "Offset Type"
+        },
+        "data_description": {
+          "offset_type": "How offsets are calculated"
+        }
+      }
+    },
+    "error": {
+      "need_two_lights": "Please select at least two lights",
+      "name_exists": "A group with this name already exists",
+      "invalid_yaml": "Invalid YAML configuration. See error details below."
+    },
+    "abort": {
+      "already_configured": "This group is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Configure {name}",
+        "description": "Select an option:",
+        "menu_options": {
+          "manage_lights": "Add or remove lights",
+          "adjust_offsets": "Adjust brightness settings",
+          "edit_yaml": "View/Edit as YAML"
+        }
+      },
+      "manage_lights": {
+        "title": "Manage Lights",
+        "description": "Add or remove lights from this group. Currently {current_count} lights in group.",
+        "data": {
+          "entity_id": "Lights in group"
+        },
+        "data_description": {
+          "entity_id": "Select the lights to include in this group (minimum 2)"
+        }
+      },
+      "new_light_offsets": {
+        "title": "Configure New Lights",
+        "description": "Set the brightness offset, minimum, and maximum for newly added lights: {new_lights}",
+        "data": {},
+        "data_description": {}
+      },
+      "adjust_offsets": {
+        "title": "Adjust Brightness Settings",
+        "description": "For each light: Offset (negative = dimmer), Min (floor), Max (ceiling).",
+        "data": {
+          "offset_type": "Offset Type"
+        }
+      },
+      "edit_yaml": {
+        "title": "Edit YAML Configuration",
+        "description": "Current configuration for **{name}**. Edit and submit to save changes.\n\n{error_detail}",
+        "data": {
+          "yaml_config": "Configuration"
+        }
+      }
+    },
+    "error": {
+      "need_two_lights": "Please select at least two lights",
+      "invalid_yaml": "Invalid YAML configuration. Check the error details.",
+      "name_exists": "A group with this name already exists"
+    }
+  }
+}

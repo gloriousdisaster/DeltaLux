@@ -1,0 +1,12 @@
+{
+  "domain": "deltalux",
+  "name": "DeltaLux",
+  "codeowners": [],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/yourusername/deltalux",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/yourusername/deltalux/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
