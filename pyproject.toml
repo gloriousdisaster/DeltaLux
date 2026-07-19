@@ -1,0 +1,6 @@
+[tool.pytest.ini_options]
+# The repo root doubles as the integration package (it has an __init__.py that
+# imports Home Assistant); importlib mode stops pytest importing it as a
+# package during collection.
+addopts = "--import-mode=importlib"
+testpaths = ["tests"]
